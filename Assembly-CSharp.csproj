@@ -46,12 +46,12 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Script\MainScene\BirdScript.cs" />
-     <Compile Include="Assets\Script\MainScene\CalManeger.cs" />
-     <Compile Include="Assets\Script\MainScene\CameraScript.cs" />
-     <Compile Include="Assets\Script\MainScene\EarthController.cs" />
-     <Compile Include="Assets\Script\MainScene\GUIManeger.cs" />
-     <Compile Include="Assets\Script\MainScene\GameControllerScript.cs" />
+     <Compile Include="Assets\Users\Syaony\Script\MainScene\BirdScript.cs" />
+     <Compile Include="Assets\Users\Syaony\Script\MainScene\CalManeger.cs" />
+     <Compile Include="Assets\Users\Syaony\Script\MainScene\CameraScript.cs" />
+     <Compile Include="Assets\Users\Syaony\Script\MainScene\EarthController.cs" />
+     <Compile Include="Assets\Users\Syaony\Script\MainScene\GUIManeger.cs" />
+     <Compile Include="Assets\Users\Syaony\Script\MainScene\GameControllerScript.cs" />
      <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
