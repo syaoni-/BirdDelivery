@@ -12,6 +12,7 @@ public class CameraScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		playerPosition = GameObject.FindWithTag("Player").transform.position;
 		transform.LookAt(playerPosition);
 	}
 }

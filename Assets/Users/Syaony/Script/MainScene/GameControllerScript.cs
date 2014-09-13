@@ -29,7 +29,8 @@ public class GameControllerScript : MonoBehaviour {
 	void Start () {
 	
 		bird = GameObject.FindWithTag("Player");
-		state = GameStatus.DIRECTION;
+		state = GameStatus.START;
+
 
 	}
 	
@@ -37,31 +38,34 @@ public class GameControllerScript : MonoBehaviour {
 	void Update () {
 
 		//GameStatus Function
-		switch (state){
-		case GameStatus.DIRECTION:
+		switch (StatusManeger.gameState){
+		case StatusManeger.GameStatus.START:
+			gameStart();
+			break;
+
+		case StatusManeger.GameStatus.DIRECTION:
 			directionDecide();
 			break;
 
-		case GameStatus.ANGLE:
+		case StatusManeger.GameStatus.ANGLE:
 			angleDecide();
 			break;
 
-		case GameStatus.POWER:
+		case StatusManeger.GameStatus.POWER:
 			powerDecide();
 			break;
 
-		case GameStatus.FLY:
+		case StatusManeger.GameStatus.FLY:
 			birdFly();
 			break;
 
-		case GameStatus.LANDING:
+		case StatusManeger.GameStatus.LANDING:
 			birdLanding();
 			break;
 
 		default:
 			break;
 		}
-	
 	}
 
 
@@ -71,6 +75,7 @@ public class GameControllerScript : MonoBehaviour {
 	//TODO
 	private void gameStart(){
 		state = GameStatus.DIRECTION;
+		StatusManeger.gameState = StatusManeger.GameStatus.DIRECTION;
 	}
 
 
@@ -78,16 +83,10 @@ public class GameControllerScript : MonoBehaviour {
 	//State : DIRECTION
 	//Derection decide function
 	private void directionDecide(){
-
-		playerDirection++;
-		if (playerDirection > 360){
-			playerDirection = 0;
-		}
-
 		if (Input.anyKeyDown){
 			bird.SendMessage("birdDirection",playerDirection);
 			GameObject.FindWithTag("Earth").SendMessage("getPlayerDirection",playerDirection);
-			state = GameStatus.ANGLE;
+			StatusManeger.gameState = StatusManeger.GameStatus.ANGLE;
 		}
 	}
 
@@ -96,16 +95,9 @@ public class GameControllerScript : MonoBehaviour {
 	//Angle decide function
 	//TODO
 	private void angleDecide(){
-		int rightAngle = 90;
-		if (playerAngle < rightAngle){
-			playerAngle++;
-		} else {
-			playerAngle = 0;
-		}
-
 		if (Input.anyKeyDown){
-			GameObject.FindWithTag("Earth").SendMessage("getPlayerAngle",playerAngle);
 			state = GameStatus.POWER;
+			StatusManeger.gameState = StatusManeger.GameStatus.POWER;
 		}
 	}
 
@@ -115,11 +107,10 @@ public class GameControllerScript : MonoBehaviour {
 	//TODO
 	private void powerDecide(){
 
-		playerJumpPow++;
-
 		if (Input.anyKeyDown){
-			bird.SendMessage("birdGetPow",Mathf.Abs(Mathf.Sin(playerJumpPow)));
+			bird.SendMessage("birdGetPow",Mathf.Abs(Mathf.Sin(PlayerStatusManeger.playerJumpPow)));
 			state = GameStatus.FLY;
+			StatusManeger.gameState = StatusManeger.GameStatus.FLY;
 		}
 	}
 
@@ -129,6 +120,7 @@ public class GameControllerScript : MonoBehaviour {
 	//TODO
 	private void birdFly(){
 		state = GameStatus.LANDING;
+		StatusManeger.gameState = StatusManeger.GameStatus.LANDING;
 	}
 
 
@@ -137,6 +129,7 @@ public class GameControllerScript : MonoBehaviour {
 	//TODO
 	private void birdLanding(){
 		state = GameStatus.FINISH;
+		StatusManeger.gameState = StatusManeger.GameStatus.FINISH;
 	}
 
 

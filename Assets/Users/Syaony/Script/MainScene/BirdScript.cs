@@ -6,9 +6,13 @@ public class BirdScript : MonoBehaviour {
 	private float MaxPow = 100;
 	private Vector3 jumpDirection;
 
+	private Animator anim;
+
 	// Use this for initialization
 	void Start () {
 		jumpDirection = new Vector3(0,1,0);
+		anim = GetComponent<Animator>();
+		anim.SetBool("isFly",false);
 	}
 	
 	// Update is called once per frame
@@ -17,9 +21,8 @@ public class BirdScript : MonoBehaviour {
 
 
 	//State : DIRECTION
-	//TODO
 	void birdDirection(int dirValue){
-		StartCoroutine("moveDirection",dirValue);
+		StartCoroutine("moveDirection",PlayerStatusManeger.playerDirection);
 	}
 
 	private IEnumerator moveDirection(float dirValue){
@@ -42,6 +45,7 @@ public class BirdScript : MonoBehaviour {
 		Object.Destroy(GameObject.FindWithTag("Base")); //Base destroy 
 		GameObject.FindWithTag("Earth").SendMessage("turnStart"); //Earth start turn
 		gameObject.rigidbody.AddForce(jumpDirection * flyPow * MaxPow, ForceMode.VelocityChange);
+		anim.SetBool("isFly",true);
 	}
 
 

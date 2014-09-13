@@ -46,13 +46,37 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\UnityChan\Scripts\CameraController.cs" />
+     <Compile Include="Assets\UnityChan\Scripts\FaceUpdate.cs" />
+     <Compile Include="Assets\UnityChan\Scripts\IdleChanger.cs" />
+     <Compile Include="Assets\UnityChan\Scripts\ThirdPersonCamera.cs" />
+     <Compile Include="Assets\UnityChan\Scripts\UnityChanControlScriptWithRgidBody.cs" />
+     <Compile Include="Assets\UnityChan\SplashScreen\Scripts\SplashScreen.cs" />
+     <Compile Include="Assets\Users\Syaony\Script\MainScene\AngleArrow.cs" />
+     <Compile Include="Assets\Users\Syaony\Script\MainScene\Arrow.cs" />
      <Compile Include="Assets\Users\Syaony\Script\MainScene\BirdScript.cs" />
      <Compile Include="Assets\Users\Syaony\Script\MainScene\CalManeger.cs" />
      <Compile Include="Assets\Users\Syaony\Script\MainScene\CameraScript.cs" />
+     <Compile Include="Assets\Users\Syaony\Script\MainScene\DirectionArrow.cs" />
      <Compile Include="Assets\Users\Syaony\Script\MainScene\EarthController.cs" />
      <Compile Include="Assets\Users\Syaony\Script\MainScene\GUIManeger.cs" />
      <Compile Include="Assets\Users\Syaony\Script\MainScene\GameControllerScript.cs" />
+     <Compile Include="Assets\Users\Syaony\Script\MainScene\PlayerStatusManeger.cs" />
+     <Compile Include="Assets\Users\Syaony\Script\MainScene\SingletonMonoBehaviour.cs" />
+     <Compile Include="Assets\Users\Syaony\Script\MainScene\StatusManeger.cs" />
+     <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_eye.shader" />
+     <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_fuku.shader" />
+     <None Include="Assets\UnityChan\Voice\unity-chan_voice_list.txt" />
      <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />
+     <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_fuku_ds.shader" />
+     <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_eye_blend.shader" />
+     <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_hair_ds.shader" />
+     <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_akarami_blend.shader" />
+     <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_hair.shader" />
+     <None Include="Assets\UnityChan\Stage\Shader\AlphaMask.shader" />
+     <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_eyelash_blend.shader" />
+     <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_hada.shader" />
+     <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_hada_blend.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

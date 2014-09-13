@@ -4,15 +4,12 @@ using System.Collections;
 public class EarthController : MonoBehaviour {
 
 	private int turnDirection;
-	private float turnSpeed;
-	private float limitAngle;
 	private bool isTurn;
 
 
 	//State : DIRECTION
 	void getPlayerDirection(int playerDirection){
 		turnDirection = playerDirection;
-		limitAngle = 0.1f;
 		isTurn = true;
 	}
 
@@ -20,12 +17,6 @@ public class EarthController : MonoBehaviour {
 	//State : ANGLE
 	//TODO
 	void getPlayerAngle(int playerAngle){
-		float angle = Mathf.Sin(playerAngle);
-		if (angle < limitAngle){
-			turnSpeed = limitAngle;
-		} else {
-			turnSpeed = limitAngle/angle;
-		}
 	}
 
 
@@ -35,6 +26,18 @@ public class EarthController : MonoBehaviour {
 	}
 
 	private IEnumerator turn(){
+
+		int turnDirection = PlayerStatusManeger.playerDirection;
+		float turnSpeed;
+		float limitAngle = 0.01f;
+		float angle = Mathf.Sin(PlayerStatusManeger.playerAngle);
+
+		if (angle < limitAngle){
+			turnSpeed = limitAngle;
+		} else {
+			turnSpeed = limitAngle/angle;
+		}
+
 		float turnX = turnSpeed * CalManeger.getTurnX((float)turnDirection);
 		float turnZ = turnSpeed * CalManeger.getTurnZ((float)turnDirection);
 
