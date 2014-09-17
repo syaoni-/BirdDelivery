@@ -18,7 +18,7 @@ public class PlayerStatusManeger : SingletonMonoBehaviour<PlayerStatusManeger> {
 	public static int playerDirection;
 	public static int playerAngle;
 	public static float playerJumpPow;
-	private float jumpPowSpeed = 0.1f;
+	private float jumpPowSpeed = 0.05f;
 
 
 	// Use this for initialization
@@ -48,7 +48,11 @@ public class PlayerStatusManeger : SingletonMonoBehaviour<PlayerStatusManeger> {
 			break;
 
 		case StatusManeger.GameStatus.POWER:
-			playerJumpPow += jumpPowSpeed;
+			if (playerJumpPow < Mathf.PI/2){
+				playerJumpPow += jumpPowSpeed;
+			} else {
+				playerJumpPow = -Mathf.PI/2;
+			}
 			break;
 		}
 	}

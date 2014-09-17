@@ -1,18 +1,18 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Users/Syaony/Script/MainScene/AngleArrow.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Users/Syaony/Script/MainScene/TargetList.cs">
     <Files>
-      <File FileName="Assets/Users/Syaony/Script/MainScene/DirectionArrow.cs" Line="8" Column="41" />
+      <File FileName="Assets/Users/Syaony/Script/MainScene/GUIManeger.cs" Line="49" Column="7" />
+      <File FileName="Assets/Users/Syaony/Script/MainScene/DirectionArrow.cs" Line="1" Column="1" />
       <File FileName="Assets/Users/Syaony/Script/MainScene/GameControllerScript.cs" Line="1" Column="1" />
       <File FileName="Assets/Users/Syaony/Script/MainScene/BirdScript.cs" Line="1" Column="1" />
       <File FileName="Assets/UnityChan/Scripts/IdleChanger.cs" Line="1" Column="1" />
       <File FileName="Assets/UnityChan/Scripts/FaceUpdate.cs" Line="1" Column="1" />
       <File FileName="Assets/Users/Syaony/Script/MainScene/CameraScript.cs" Line="1" Column="1" />
-      <File FileName="Assets/Users/Syaony/Script/MainScene/GUIManeger.cs" Line="1" Column="1" />
       <File FileName="Assets/Users/Syaony/Script/MainScene/StatusManeger.cs" Line="1" Column="1" />
       <File FileName="Assets/Users/Syaony/Script/MainScene/PlayerStatusManeger.cs" Line="1" Column="1" />
       <File FileName="Assets/Users/Syaony/Script/MainScene/EarthController.cs" Line="1" Column="1" />
-      <File FileName="Assets/Users/Syaony/Script/MainScene/AngleArrow.cs" Line="12" Column="3" />
+      <File FileName="Assets/Users/Syaony/Script/MainScene/TargetList.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

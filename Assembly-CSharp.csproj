@@ -52,7 +52,6 @@
      <Compile Include="Assets\UnityChan\Scripts\ThirdPersonCamera.cs" />
      <Compile Include="Assets\UnityChan\Scripts\UnityChanControlScriptWithRgidBody.cs" />
      <Compile Include="Assets\UnityChan\SplashScreen\Scripts\SplashScreen.cs" />
-     <Compile Include="Assets\Users\Syaony\Script\MainScene\AngleArrow.cs" />
      <Compile Include="Assets\Users\Syaony\Script\MainScene\Arrow.cs" />
      <Compile Include="Assets\Users\Syaony\Script\MainScene\BirdScript.cs" />
      <Compile Include="Assets\Users\Syaony\Script\MainScene\CalManeger.cs" />
@@ -64,6 +63,7 @@
      <Compile Include="Assets\Users\Syaony\Script\MainScene\PlayerStatusManeger.cs" />
      <Compile Include="Assets\Users\Syaony\Script\MainScene\SingletonMonoBehaviour.cs" />
      <Compile Include="Assets\Users\Syaony\Script\MainScene\StatusManeger.cs" />
+     <Compile Include="Assets\Users\Syaony\Script\MainScene\TargetList.cs" />
      <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_eye.shader" />
      <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_fuku.shader" />
      <None Include="Assets\UnityChan\Voice\unity-chan_voice_list.txt" />

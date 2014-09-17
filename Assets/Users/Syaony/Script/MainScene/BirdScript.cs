@@ -3,7 +3,7 @@ using System.Collections;
 
 public class BirdScript : MonoBehaviour {
 
-	private float MaxPow = 100;
+	private float MaxPow = 50;
 	private Vector3 jumpDirection;
 
 	private Animator anim;

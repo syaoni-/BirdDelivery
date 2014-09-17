@@ -22,15 +22,18 @@ public class GUIManeger : MonoBehaviour {
 	void Start () {
 		Instantiate(directionArrow,transform.position,transform.rotation);
 
-		angleX = 10;
-		angleY = 50;
-		angleW = 50;
-		angleH = 50;
+		float screenWidth = Screen.width/10;
+		float screenHeight = Screen.height/10;
 
-		powerX = 10;
-		powerY = 100;
-		powerW = 50;
-		powerH = 200;
+		angleX = screenWidth/2;
+		angleY = screenHeight/2;
+		angleW = screenWidth*2;
+		angleH = screenHeight*2;
+
+		powerX = screenWidth;
+		powerY = screenHeight*3;
+		powerW = screenWidth;
+		powerH = screenHeight*5;
 	}
 	
 	// Update is called once per frame
@@ -42,10 +45,10 @@ public class GUIManeger : MonoBehaviour {
 #if DEBUG_LOG
 		GUI.Label(new Rect(10,10,100,100), "Direction : "+PlayerStatusManeger.playerDirection);
 		GUI.Label (new Rect(10,20,100,100), "Angle : "+PlayerStatusManeger.playerAngle);
-		GUI.Label(new Rect(10,30,100,100), "power : "+PlayerStatusManeger.playerJumpPow);
+		GUI.Label(new Rect(10,30,100,100), "power : "+Mathf.Sin(PlayerStatusManeger.playerJumpPow));
 #endif
 		GUI.DrawTexture(new Rect(powerX, powerY, powerW, powerH), powerGaugeBack);
-		GUI.DrawTexture(new Rect(powerX, powerY, powerW, powerH*Mathf.Sin(PlayerStatusManeger.playerJumpPow)), powerGauge);
+		GUI.DrawTexture(new Rect(powerX, powerY, powerW, powerH*Mathf.Abs(Mathf.Sin(PlayerStatusManeger.playerJumpPow))), powerGauge);
 
 		GUIUtility.RotateAroundPivot(90 - PlayerStatusManeger.playerAngle, new Vector2(angleX+angleW/2, angleY+angleH));
 		GUI.DrawTexture(new Rect(angleX, angleY, angleW, angleH), angleArrow);
