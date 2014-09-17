@@ -3,21 +3,7 @@ using System.Collections;
 
 public class EarthController : MonoBehaviour {
 
-	private int turnDirection;
-	private bool isTurn;
-
-
-	//State : DIRECTION
-	void getPlayerDirection(int playerDirection){
-		turnDirection = playerDirection;
-		isTurn = true;
-	}
-
-
-	//State : ANGLE
-	//TODO
-	void getPlayerAngle(int playerAngle){
-	}
+	private bool isTurn = true;
 
 
 	//State : POWER

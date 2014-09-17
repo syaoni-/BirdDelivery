@@ -85,7 +85,7 @@ public class GameControllerScript : MonoBehaviour {
 	private void directionDecide(){
 		if (Input.anyKeyDown){
 			bird.SendMessage("birdDirection",playerDirection);
-			GameObject.FindWithTag("Earth").SendMessage("getPlayerDirection",playerDirection);
+			//GameObject.FindWithTag("Earth").SendMessage("getPlayerDirection",playerDirection);
 			StatusManeger.gameState = StatusManeger.GameStatus.ANGLE;
 		}
 	}

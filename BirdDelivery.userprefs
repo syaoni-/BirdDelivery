@@ -9,10 +9,10 @@
       <File FileName="Assets/UnityChan/Scripts/IdleChanger.cs" Line="1" Column="1" />
       <File FileName="Assets/UnityChan/Scripts/FaceUpdate.cs" Line="1" Column="1" />
       <File FileName="Assets/Users/Syaony/Script/MainScene/CameraScript.cs" Line="1" Column="1" />
-      <File FileName="Assets/Users/Syaony/Script/MainScene/StatusManeger.cs" Line="1" Column="1" />
+      <File FileName="Assets/Users/Syaony/Script/MainScene/StatusManeger.cs" Line="34" Column="2" />
       <File FileName="Assets/Users/Syaony/Script/MainScene/PlayerStatusManeger.cs" Line="1" Column="1" />
-      <File FileName="Assets/Users/Syaony/Script/MainScene/EarthController.cs" Line="1" Column="1" />
-      <File FileName="Assets/Users/Syaony/Script/MainScene/TargetList.cs" Line="1" Column="1" />
+      <File FileName="Assets/Users/Syaony/Script/MainScene/EarthController.cs" Line="43" Column="3" />
+      <File FileName="Assets/Users/Syaony/Script/MainScene/TargetList.cs" Line="22" Column="37" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
