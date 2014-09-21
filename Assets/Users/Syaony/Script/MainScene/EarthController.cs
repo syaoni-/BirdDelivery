@@ -4,6 +4,7 @@ using System.Collections;
 public class EarthController : MonoBehaviour {
 
 	private bool isTurn = true;
+	public GameObject playerParticle;
 
 
 	//State : POWER
@@ -15,7 +16,7 @@ public class EarthController : MonoBehaviour {
 
 		int turnDirection = PlayerStatusManeger.playerDirection;
 		float turnSpeed;
-		float limitAngle = 0.05f;
+		float limitAngle = 0.01f;
 		float angle = Mathf.Sin(Mathf.PI*PlayerStatusManeger.playerAngle/180);
 
 		if (angle < limitAngle){
@@ -39,6 +40,8 @@ public class EarthController : MonoBehaviour {
 	private void OnCollisionEnter(Collision info){
 		if (info.gameObject.tag == "Player"){
 			isTurn = false;
+			Instantiate(playerParticle, info.transform.position, info.transform.rotation);
+			StatusManeger.gameState = StatusManeger.GameStatus.LANDING;
 		}
 	}
 

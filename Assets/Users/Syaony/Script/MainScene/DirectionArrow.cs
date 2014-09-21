@@ -10,8 +10,8 @@ public class DirectionArrow : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		centerObj = GameObject.FindWithTag("Player");
-		transform.position = centerObj.transform.position + centerObj.transform.forward + centerObj.transform.up;
-		transform.rotation = new Quaternion(0,90,0,1);
+		transform.position = centerObj.transform.position + centerObj.transform.forward*gameObject.transform.localScale.x*1.2f + centerObj.transform.up;
+		transform.rotation = new Quaternion(0,45,45,1);
 	}
 	
 	// Update is called once per frame

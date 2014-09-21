@@ -18,6 +18,8 @@ public class PlayerStatusManeger : SingletonMonoBehaviour<PlayerStatusManeger> {
 	public static int playerDirection;
 	public static int playerAngle;
 	public static float playerJumpPow;
+	public static float playerDistanceToGoal;
+	public static string targetName;
 	private float jumpPowSpeed = 0.05f;
 
 

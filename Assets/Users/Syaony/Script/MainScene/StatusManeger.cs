@@ -21,6 +21,7 @@ public class StatusManeger : SingletonMonoBehaviour<StatusManeger> {
 		ANGLE,
 		POWER,
 		FLY,
+		FLYING,
 		LANDING,
 		FINISH
 	}
@@ -31,9 +32,5 @@ public class StatusManeger : SingletonMonoBehaviour<StatusManeger> {
 	void Start () {
 		gameState = GameStatus.START;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+
 }

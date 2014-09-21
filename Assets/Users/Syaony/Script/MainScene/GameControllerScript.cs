@@ -7,31 +7,10 @@ public class GameControllerScript : MonoBehaviour {
 
 
 	GameObject bird;
-		
-	public enum GameStatus{
-		START,
-		DIRECTION,
-		ANGLE,
-		POWER,
-		FLY,
-		LANDING,
-		FINISH
-	}
-
-	public GameStatus state;
-
-	public int playerDirection;
-	public int playerAngle;
-	public int playerJumpPow;
-
 
 	// Use this for initialization
 	void Start () {
-	
 		bird = GameObject.FindWithTag("Player");
-		state = GameStatus.START;
-
-
 	}
 	
 	// Update is called once per frame
@@ -74,7 +53,6 @@ public class GameControllerScript : MonoBehaviour {
 	//Game start function
 	//TODO
 	private void gameStart(){
-		state = GameStatus.DIRECTION;
 		StatusManeger.gameState = StatusManeger.GameStatus.DIRECTION;
 	}
 
@@ -84,8 +62,7 @@ public class GameControllerScript : MonoBehaviour {
 	//Derection decide function
 	private void directionDecide(){
 		if (Input.anyKeyDown){
-			bird.SendMessage("birdDirection",playerDirection);
-			//GameObject.FindWithTag("Earth").SendMessage("getPlayerDirection",playerDirection);
+			bird.SendMessage("birdDirection");
 			StatusManeger.gameState = StatusManeger.GameStatus.ANGLE;
 		}
 	}
@@ -96,7 +73,6 @@ public class GameControllerScript : MonoBehaviour {
 	//TODO
 	private void angleDecide(){
 		if (Input.anyKeyDown){
-			state = GameStatus.POWER;
 			StatusManeger.gameState = StatusManeger.GameStatus.POWER;
 		}
 	}
@@ -108,8 +84,7 @@ public class GameControllerScript : MonoBehaviour {
 	private void powerDecide(){
 
 		if (Input.anyKeyDown){
-			bird.SendMessage("birdGetPow",Mathf.Abs(Mathf.Sin(PlayerStatusManeger.playerJumpPow)));
-			state = GameStatus.FLY;
+			bird.SendMessage("birdGetPow");
 			StatusManeger.gameState = StatusManeger.GameStatus.FLY;
 		}
 	}
@@ -119,8 +94,7 @@ public class GameControllerScript : MonoBehaviour {
 	//Bird fly function
 	//TODO
 	private void birdFly(){
-		state = GameStatus.LANDING;
-		StatusManeger.gameState = StatusManeger.GameStatus.LANDING;
+		//StatusManeger.gameState = StatusManeger.GameStatus.LANDING;
 	}
 
 
@@ -128,7 +102,6 @@ public class GameControllerScript : MonoBehaviour {
 	//Bird landing function
 	//TODO
 	private void birdLanding(){
-		state = GameStatus.FINISH;
 		StatusManeger.gameState = StatusManeger.GameStatus.FINISH;
 	}
 

@@ -4,6 +4,7 @@ using System.Collections;
 public class GUIManeger : MonoBehaviour {
 
 	public GameObject directionArrow;
+	private GameObject targetDirectionArrow;
 
 	public Texture angleArrow;
 	private float angleX;
@@ -46,6 +47,8 @@ public class GUIManeger : MonoBehaviour {
 		GUI.Label(new Rect(10,10,100,100), "Direction : "+PlayerStatusManeger.playerDirection);
 		GUI.Label (new Rect(10,20,100,100), "Angle : "+PlayerStatusManeger.playerAngle);
 		GUI.Label(new Rect(10,30,100,100), "power : "+Mathf.Sin(PlayerStatusManeger.playerJumpPow));
+		GUI.Label(new Rect(10,50,100,100), "Distance : "+PlayerStatusManeger.playerDistanceToGoal);
+		GUI.Label(new Rect(400,10,100,100), "Target : "+PlayerStatusManeger.targetName);
 #endif
 		GUI.DrawTexture(new Rect(powerX, powerY, powerW, powerH), powerGaugeBack);
 		GUI.DrawTexture(new Rect(powerX, powerY, powerW, powerH*Mathf.Abs(Mathf.Sin(PlayerStatusManeger.playerJumpPow))), powerGauge);
