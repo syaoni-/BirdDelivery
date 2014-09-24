@@ -8,6 +8,8 @@ public class TargetList : MonoBehaviour {
 
 	private GameObject target;
 	public GameObject particlePrefab;
+	public GameObject targetDirection;
+	private GameObject targetArrow;
 
 	List<GameObject> Targets = new List<GameObject>();
 
@@ -29,16 +31,30 @@ public class TargetList : MonoBehaviour {
 		Debug.Log(Targets[mainTarget].name);
 
 		target = Targets[mainTarget];
+		target.tag = "MainTarget";
 		PlayerStatusManeger.targetName = target.name;
 		target.transform.localScale = target.transform.localScale * 2.5f;
 		GameObject targetParticle = Instantiate(particlePrefab, target.transform.position, new Quaternion(0,0,0,1)) as GameObject;
 		targetParticle.transform.parent = gameObject.transform;
+
+		targetArrow = Instantiate(targetDirection, playerStartPos, this.transform.rotation) as GameObject;
+		targetArrow.transform.LookAt(target.transform);
+		targetArrow.transform.rotation = new Quaternion(0,targetArrow.transform.rotation.y, 0, 1);
+		targetArrow.transform.position += targetArrow.transform.forward * 100;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		//float restDistance = Vector3.Distance(playerStartPos, target.transform.position);
 		float restDistance = 500.0f * Vector3.Angle(playerStartPos, target.transform.position);
 		PlayerStatusManeger.playerDistanceToGoal = restDistance;
+
+		switch (StatusManeger.gameState) {
+		case StatusManeger.GameStatus.ANGLE:
+			Object.Destroy(targetArrow);
+			break;
+
+		default:
+			break;
+		}
 	}
 }

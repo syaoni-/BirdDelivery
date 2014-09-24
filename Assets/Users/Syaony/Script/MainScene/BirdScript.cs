@@ -4,7 +4,7 @@ using System.Collections;
 public class BirdScript : MonoBehaviour {
 
 	private Vector3 earthPos;
-	private float gravity = 0.05f;
+	private float gravity = 0.1f;
 
 	private float MaxPow = 100;
 	private Vector3 jumpDirection;
@@ -51,7 +51,7 @@ public class BirdScript : MonoBehaviour {
 	//TODO
 	void birdGetPow(){
 		//StartCoroutine("birdFly",Mathf.Abs(Mathf.Sin(PlayerStatusManeger.playerJumpPow)));
-		Invoke("birdFly",3);
+		Invoke("birdFly",3.0f);
 	}
 
 	/*private IEnumerator birdFly(float flyPow){

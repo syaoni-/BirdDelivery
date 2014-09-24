@@ -26,10 +26,10 @@ public class GUIManeger : MonoBehaviour {
 		float screenWidth = Screen.width/10;
 		float screenHeight = Screen.height/10;
 
-		angleX = screenWidth/2;
-		angleY = screenHeight/2;
+		angleX = screenWidth*3;
+		angleY = screenHeight*2;
 		angleW = screenWidth*2;
-		angleH = screenHeight*2;
+		angleH = screenHeight*3;
 
 		powerX = screenWidth;
 		powerY = screenHeight*3;
@@ -50,11 +50,21 @@ public class GUIManeger : MonoBehaviour {
 		GUI.Label(new Rect(10,50,100,100), "Distance : "+PlayerStatusManeger.playerDistanceToGoal);
 		GUI.Label(new Rect(400,10,100,100), "Target : "+PlayerStatusManeger.targetName);
 #endif
-		GUI.DrawTexture(new Rect(powerX, powerY, powerW, powerH), powerGaugeBack);
-		GUI.DrawTexture(new Rect(powerX, powerY, powerW, powerH*Mathf.Abs(Mathf.Sin(PlayerStatusManeger.playerJumpPow))), powerGauge);
+		switch (StatusManeger.gameState) {
 
-		GUIUtility.RotateAroundPivot(90 - PlayerStatusManeger.playerAngle, new Vector2(angleX+angleW/2, angleY+angleH));
-		GUI.DrawTexture(new Rect(angleX, angleY, angleW, angleH), angleArrow);
+		case StatusManeger.GameStatus.ANGLE:
+			GUIUtility.RotateAroundPivot(90 - 90 * Mathf.Abs(Mathf.Sin(PlayerStatusManeger.playerAngle)), new Vector2(angleX+angleW/2, angleY+angleH));
+			GUI.DrawTexture(new Rect(angleX, angleY, angleW, angleH), angleArrow);
+			break;
+
+		case StatusManeger.GameStatus.POWER:
+			GUI.DrawTexture(new Rect(powerX, powerY, powerW, powerH), powerGaugeBack);
+			GUI.DrawTexture(new Rect(powerX, powerY, powerW, powerH*Mathf.Abs(Mathf.Sin(PlayerStatusManeger.playerJumpPow))), powerGauge);
+			break;
+
+		default:
+			break;
+		}
 	}
 
 }

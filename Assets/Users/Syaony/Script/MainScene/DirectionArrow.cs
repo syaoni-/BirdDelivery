@@ -21,7 +21,7 @@ public class DirectionArrow : MonoBehaviour {
 			transform.RotateAround(centerObj.transform.position, centerObj.transform.up, 1);
 			break;
 			
-		case StatusManeger.GameStatus.FLY:
+		case StatusManeger.GameStatus.ANGLE:
 			Object.Destroy(gameObject);
 			break;
 			
