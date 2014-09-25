@@ -16,11 +16,12 @@ public class PlayerStatusManeger : SingletonMonoBehaviour<PlayerStatusManeger> {
 
 
 	public static int playerDirection;
-	public static int playerAngle;
+	public static float playerAngle;
 	public static float playerJumpPow;
-	public static float playerDistanceToGoal;
+	public static int playerDistanceToGoal;
 	public static string targetName;
 	private float jumpPowSpeed = 0.05f;
+	private float angleSpeed = 0.025f;
 
 
 	// Use this for initialization
@@ -41,11 +42,10 @@ public class PlayerStatusManeger : SingletonMonoBehaviour<PlayerStatusManeger> {
 			break;
 
 		case StatusManeger.GameStatus.ANGLE:
-			int rightAngle = 90;
-			if (playerAngle < rightAngle){
-				playerAngle++;
+			if (playerAngle < Mathf.PI/2) {
+				playerAngle += angleSpeed;
 			} else {
-				playerAngle = 0;
+				playerAngle = -Mathf.PI/2;
 			}
 			break;
 

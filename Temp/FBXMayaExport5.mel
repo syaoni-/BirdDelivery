@@ -1,0 +1,23 @@
+print "Starting maya loading and fbx conversion \n";
+	
+if (`file -q -exists "/Users/e125752/Unity_Project/BirdDelivery/Assets/EiffelTower2.mb"`)
+{		
+	file -o "/Users/e125752/Unity_Project/BirdDelivery/Assets/EiffelTower2.mb";
+	FBXExportEmbeddedTextures -v false;
+	// FBXExportHardEdges -v true;
+	FBXExportApplyConstantKeyReducer -v false;
+	FBXExportShowUI -v false;
+
+	print "Before fbx export\n";
+	FBXExport -f "/Users/e125752/Unity_Project/BirdDelivery/Temp/ExportedFBXFile.fbx";
+	print "after fbx export\n";
+}
+else
+	print "Could not open Maya file.";
+
+
+system ("rm \"/Users/e125752/Unity_Project/BirdDelivery/Temp/CommandPipe\"");
+
+$donepipeKill = `fopen "/Users/e125752/Unity_Project/BirdDelivery/Temp/SyncPipeKill" "w"`;
+fwrite $donepipeKill "Done";
+fclose $donepipeKill;

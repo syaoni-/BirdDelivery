@@ -64,6 +64,7 @@
      <Compile Include="Assets\Users\Syaony\Script\MainScene\SingletonMonoBehaviour.cs" />
      <Compile Include="Assets\Users\Syaony\Script\MainScene\StatusManeger.cs" />
      <Compile Include="Assets\Users\Syaony\Script\MainScene\TargetList.cs" />
+     <Compile Include="Assets\Users\Syaony\Script\hoge.cs" />
      <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_eye.shader" />
      <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_fuku.shader" />
      <None Include="Assets\UnityChan\Voice\unity-chan_voice_list.txt" />

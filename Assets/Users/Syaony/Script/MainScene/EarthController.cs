@@ -16,8 +16,8 @@ public class EarthController : MonoBehaviour {
 
 		int turnDirection = PlayerStatusManeger.playerDirection;
 		float turnSpeed;
-		float limitAngle = 0.01f;
-		float angle = Mathf.Sin(Mathf.PI*PlayerStatusManeger.playerAngle/180);
+		float limitAngle = 0.1f;
+		float angle = Mathf.Abs(Mathf.Sin(PlayerStatusManeger.playerAngle));
 
 		if (angle < limitAngle){
 			turnSpeed = limitAngle;
@@ -41,6 +41,7 @@ public class EarthController : MonoBehaviour {
 		if (info.gameObject.tag == "Player"){
 			isTurn = false;
 			Instantiate(playerParticle, info.transform.position, info.transform.rotation);
+			Object.Destroy(info.gameObject);
 			StatusManeger.gameState = StatusManeger.GameStatus.LANDING;
 		}
 	}

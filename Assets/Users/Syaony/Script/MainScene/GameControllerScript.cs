@@ -18,6 +18,14 @@ public class GameControllerScript : MonoBehaviour {
 
 		//GameStatus Function
 		switch (StatusManeger.gameState){
+		case StatusManeger.GameStatus.STARTTALK:
+			gameStartTalk();
+			break;
+
+		case StatusManeger.GameStatus.TARGETSCENE:
+			targetScene();
+			break;
+
 		case StatusManeger.GameStatus.START:
 			gameStart();
 			break;
@@ -48,6 +56,22 @@ public class GameControllerScript : MonoBehaviour {
 	}
 
 
+
+	//State : STARTTALK
+	//Game start function
+	//TODO
+	private void gameStartTalk(){
+		StatusManeger.gameState = StatusManeger.GameStatus.TARGETSCENE;
+	}
+
+	//State : TARGETSECENE
+	//Game start function
+	//TODO
+	private void targetScene(){
+		if (Input.anyKeyDown) {
+			StatusManeger.gameState = StatusManeger.GameStatus.START;
+		}
+	}
 
 	//State : START
 	//Game start function
@@ -110,6 +134,7 @@ public class GameControllerScript : MonoBehaviour {
 	//Game finish function
 	//TODO
 	private void gameFinish(){
+		Application.LoadLevel("TestSence");
 	}
 
 

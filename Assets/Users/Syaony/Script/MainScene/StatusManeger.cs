@@ -16,6 +16,8 @@ public class StatusManeger : SingletonMonoBehaviour<StatusManeger> {
 
 
 	public enum GameStatus{
+		STARTTALK,
+		TARGETSCENE,
 		START,
 		DIRECTION,
 		ANGLE,
@@ -30,7 +32,7 @@ public class StatusManeger : SingletonMonoBehaviour<StatusManeger> {
 
 	// Use this for initialization
 	void Start () {
-		gameState = GameStatus.START;
+		gameState = GameStatus.STARTTALK;
 	}
 
 }
