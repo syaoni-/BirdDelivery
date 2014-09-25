@@ -1,16 +1,16 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Users/Syaony/Script/MainScene/TargetList.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Users/Syaony/Script/MainScene/GUIManeger.cs">
     <Files>
-      <File FileName="Assets/Users/Syaony/Script/MainScene/GUIManeger.cs" Line="22" Column="29" />
+      <File FileName="Assets/Users/Syaony/Script/MainScene/GUIManeger.cs" Line="66" Column="142" />
       <File FileName="Assets/Users/Syaony/Script/MainScene/DirectionArrow.cs" Line="19" Column="36" />
-      <File FileName="Assets/Users/Syaony/Script/MainScene/GameControllerScript.cs" Line="88" Column="1" />
-      <File FileName="Assets/Users/Syaony/Script/MainScene/BirdScript.cs" Line="7" Column="29" />
-      <File FileName="Assets/Users/Syaony/Script/MainScene/CameraScript.cs" Line="44" Column="52" />
-      <File FileName="Assets/Users/Syaony/Script/MainScene/StatusManeger.cs" Line="23" Column="7" />
-      <File FileName="Assets/Users/Syaony/Script/MainScene/PlayerStatusManeger.cs" Line="18" Column="36" />
-      <File FileName="Assets/Users/Syaony/Script/MainScene/EarthController.cs" Line="44" Column="36" />
-      <File FileName="Assets/Users/Syaony/Script/MainScene/TargetList.cs" Line="49" Column="3" />
+      <File FileName="Assets/Users/Syaony/Script/MainScene/GameControllerScript.cs" Line="22" Column="20" />
+      <File FileName="Assets/Users/Syaony/Script/MainScene/BirdScript.cs" Line="13" Column="2" />
+      <File FileName="Assets/Users/Syaony/Script/MainScene/CameraScript.cs" Line="56" Column="65" />
+      <File FileName="Assets/Users/Syaony/Script/MainScene/StatusManeger.cs" Line="28" Column="9" />
+      <File FileName="Assets/Users/Syaony/Script/MainScene/PlayerStatusManeger.cs" Line="21" Column="41" />
+      <File FileName="Assets/Users/Syaony/Script/MainScene/EarthController.cs" Line="27" Column="3" />
+      <File FileName="Assets/Users/Syaony/Script/MainScene/TargetList.cs" Line="45" Column="50" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -53,13 +53,17 @@ public class GUIManeger : MonoBehaviour {
 		switch (StatusManeger.gameState) {
 
 		case StatusManeger.GameStatus.ANGLE:
+			if (PlayerStatusManeger.playerDirection < 180) {
 			GUIUtility.RotateAroundPivot(90 - 90 * Mathf.Abs(Mathf.Sin(PlayerStatusManeger.playerAngle)), new Vector2(angleX+angleW/2, angleY+angleH));
+			} else {
+				GUIUtility.RotateAroundPivot(270 + 90 * Mathf.Abs(Mathf.Sin(PlayerStatusManeger.playerAngle)), new Vector2(angleX+angleW/2, angleY+angleH));
+			}
 			GUI.DrawTexture(new Rect(angleX, angleY, angleW, angleH), angleArrow);
 			break;
 
 		case StatusManeger.GameStatus.POWER:
-			GUI.DrawTexture(new Rect(powerX, powerY, powerW, powerH), powerGaugeBack);
-			GUI.DrawTexture(new Rect(powerX, powerY, powerW, powerH*Mathf.Abs(Mathf.Sin(PlayerStatusManeger.playerJumpPow))), powerGauge);
+			GUI.DrawTexture(new Rect(powerX, powerY, powerW, powerH), powerGauge);
+			GUI.DrawTexture(new Rect(powerX, powerY, powerW, powerH - powerH*Mathf.Abs(Mathf.Sin(PlayerStatusManeger.playerJumpPow))),powerGaugeBack);
 			break;
 
 		default:

@@ -54,14 +54,6 @@ public class BirdScript : MonoBehaviour {
 		Invoke("birdFly",3.0f);
 	}
 
-	/*private IEnumerator birdFly(float flyPow){
-		yield return new WaitForSeconds(3.0f); //wait 3 second
-		Object.Destroy(GameObject.FindWithTag("Base")); //Base destroy 
-		GameObject.FindWithTag("Earth").SendMessage("turnStart"); //Earth start turn
-		gameObject.rigidbody.AddForce(jumpDirection * flyPow * MaxPow, ForceMode.VelocityChange);
-		anim.SetBool("isFly",true);
-	}*/
-
 	private void birdFly(){
 		Object.Destroy(GameObject.FindWithTag("Base")); //Base destroy 
 		GameObject.FindWithTag("Earth").SendMessage("turnStart"); //Earth start turn

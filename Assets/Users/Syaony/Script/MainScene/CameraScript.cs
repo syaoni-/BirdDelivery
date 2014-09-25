@@ -35,7 +35,7 @@ public class CameraScript : MonoBehaviour {
 
 		case StatusManeger.GameStatus.TARGETSCENE:
 			GameObject target = GameObject.FindWithTag("MainTarget");
-			targetPos = target.transform.position + target.transform.up * highAngle + target.transform.forward * 100.0f;
+			targetPos = target.transform.position + target.transform.up * 100.0f + target.transform.forward * 500.0f;
 			dPos = (targetPos - this.transform.position) * speed;
 			this.transform.position += dPos;
 			lookPos = target.transform.position;

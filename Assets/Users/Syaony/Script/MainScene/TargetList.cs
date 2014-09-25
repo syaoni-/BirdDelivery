@@ -9,6 +9,7 @@ public class TargetList : MonoBehaviour {
 	private GameObject target;
 	public GameObject particlePrefab;
 	public GameObject targetDirection;
+	public GameObject targetSignPrefab;
 	private GameObject targetArrow;
 
 	List<GameObject> Targets = new List<GameObject>();
@@ -34,19 +35,21 @@ public class TargetList : MonoBehaviour {
 		target.tag = "MainTarget";
 		PlayerStatusManeger.targetName = target.name;
 		target.transform.localScale = target.transform.localScale * 2.5f;
-		GameObject targetParticle = Instantiate(particlePrefab, target.transform.position, new Quaternion(0,0,0,1)) as GameObject;
-		targetParticle.transform.parent = gameObject.transform;
+		GameObject targetParticle = Instantiate(particlePrefab, target.transform.position, target.transform.rotation) as GameObject;
+		targetParticle.transform.parent = target.transform;
 
 		targetArrow = Instantiate(targetDirection, playerStartPos, this.transform.rotation) as GameObject;
 		targetArrow.transform.LookAt(target.transform);
 		targetArrow.transform.rotation = new Quaternion(0,targetArrow.transform.rotation.y, 0, 1);
 		targetArrow.transform.position += targetArrow.transform.forward * 100;
+		GameObject targetSign = Instantiate(targetSignPrefab, target.transform.position + target.transform.up*200.0f, target.transform.rotation) as GameObject;
+		targetSign.transform.parent = target.transform;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		float restDistance = 500.0f * Vector3.Angle(playerStartPos, target.transform.position);
-		PlayerStatusManeger.playerDistanceToGoal = restDistance;
+		PlayerStatusManeger.playerDistanceToGoal = (int)restDistance;
 
 		switch (StatusManeger.gameState) {
 		case StatusManeger.GameStatus.ANGLE:
