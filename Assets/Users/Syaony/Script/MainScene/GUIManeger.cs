@@ -6,35 +6,29 @@ public class GUIManeger : MonoBehaviour {
 	public GameObject directionArrow;
 	private GameObject targetDirectionArrow;
 
-	public Texture angleArrow;
-	private float angleX;
-	private float angleY;
-	private float angleW;
-	private float angleH;
+	private float screenWidth;
+	private float screenHeight;
 
+	public Texture angleArrow;
 	public Texture powerGauge;
 	public Texture powerGaugeBack;
-	private float powerX;
-	private float powerY;
-	private float powerW;
-	private float powerH;
+	public Texture resultBack;
+	public Texture[] resultCharacters = new Texture[5];
+	private int resultCharacter;
+
+	public GUISkin numberSkin;
+	public GUISkin textSkin;
+	public GUISkin retrySkin;
+	public GUISkin topSkin;
 
 	// Use this for initialization
 	void Start () {
 		Instantiate(directionArrow,transform.position,transform.rotation);
 
-		float screenWidth = Screen.width/10;
-		float screenHeight = Screen.height/10;
+		screenWidth = Screen.width/10;
+		screenHeight = Screen.height/10;
 
-		angleX = screenWidth*3;
-		angleY = screenHeight*2;
-		angleW = screenWidth*2;
-		angleH = screenHeight*3;
-
-		powerX = screenWidth;
-		powerY = screenHeight*3;
-		powerW = screenWidth;
-		powerH = screenHeight*5;
+		resultCharacter = (int)Random.Range(0,5);
 	}
 	
 	// Update is called once per frame
@@ -50,9 +44,19 @@ public class GUIManeger : MonoBehaviour {
 		GUI.Label(new Rect(10,50,100,100), "Distance : "+PlayerStatusManeger.playerDistanceToGoal);
 		GUI.Label(new Rect(400,10,100,100), "Target : "+PlayerStatusManeger.targetName);
 #endif
+		GUI.skin = textSkin;
+		GUI.Label(new Rect(screenWidth*3,screenHeight/3*2, screenWidth*3, screenHeight*2), ""+PlayerStatusManeger.targetName+" : ");
+		GUI.skin = numberSkin;
+		GUI.Label(new Rect(screenWidth*6,screenHeight, screenWidth*3, screenHeight), ""+PlayerStatusManeger.playerDistanceToGoal+"km");
+
 		switch (StatusManeger.gameState) {
 
 		case StatusManeger.GameStatus.ANGLE:
+			float angleX = screenWidth*3;
+			float angleY = screenHeight*2;
+			float angleW = screenWidth*2;
+			float angleH = screenHeight*3;
+
 			if (PlayerStatusManeger.playerDirection < 180) {
 			GUIUtility.RotateAroundPivot(90 - 90 * Mathf.Abs(Mathf.Sin(PlayerStatusManeger.playerAngle)), new Vector2(angleX+angleW/2, angleY+angleH));
 			} else {
@@ -62,8 +66,30 @@ public class GUIManeger : MonoBehaviour {
 			break;
 
 		case StatusManeger.GameStatus.POWER:
-			GUI.DrawTexture(new Rect(powerX, powerY, powerW, powerH), powerGauge);
-			GUI.DrawTexture(new Rect(powerX, powerY, powerW, powerH - powerH*Mathf.Abs(Mathf.Sin(PlayerStatusManeger.playerJumpPow))),powerGaugeBack);
+			GUI.DrawTexture(new Rect(screenWidth, screenHeight*3, screenWidth, screenHeight*5), powerGauge);
+			GUI.DrawTexture(new Rect(screenWidth, screenHeight*3, screenWidth, screenHeight*5*(1 - Mathf.Abs(Mathf.Sin(PlayerStatusManeger.playerJumpPow)))),powerGaugeBack);
+			break;
+
+		case StatusManeger.GameStatus.RESULT:
+			GUI.DrawTexture(new Rect(screenWidth, screenHeight, screenWidth*8, screenHeight*8), resultBack);
+			GUI.DrawTexture(new Rect(screenWidth, screenHeight, screenWidth*8, screenHeight*8), resultCharacters[resultCharacter]);
+			//GUI.DrawTexture(new Rect(screenWidth*2, screenHeight*8, screenWidth*3, screenHeight*2), retryTexture);
+			//GUI.DrawTexture(new Rect(screenWidth*6, screenHeight*8, screenWidth*3, screenHeight*2), retryTexture);
+			GUI.skin = textSkin;
+			GUI.Label(new Rect(screenWidth*3,screenHeight*4, screenWidth*3, screenHeight*2), "Score");
+			GUI.skin = numberSkin;
+			GUI.Label(new Rect(screenWidth*3,screenHeight*5, screenWidth*3, screenHeight*2), ""+PlayerStatusManeger.playerDistanceToGoal+"km");
+
+			GUI.skin = retrySkin;
+			if (GUI.Button(new Rect(screenWidth, screenHeight*8, screenWidth*3, screenHeight*2),"")) {
+				Application.LoadLevel("Main");
+			}
+
+			GUI.skin = topSkin;
+			if (GUI.Button(new Rect(screenWidth*6, screenHeight*8, screenWidth*3, screenHeight*2), "")) {
+				StatusManeger.gameState = StatusManeger.GameStatus.START;
+				Application.LoadLevel("title");
+			}
 			break;
 
 		default:

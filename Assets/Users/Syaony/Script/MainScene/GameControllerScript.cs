@@ -8,6 +8,8 @@ public class GameControllerScript : MonoBehaviour {
 
 	GameObject bird;
 
+	public AudioClip parameterSE;
+
 	// Use this for initialization
 	void Start () {
 		bird = GameObject.FindWithTag("Player");
@@ -50,6 +52,9 @@ public class GameControllerScript : MonoBehaviour {
 			birdLanding();
 			break;
 
+		case StatusManeger.GameStatus.FINISH:
+			gameFinish();
+			break;
 		default:
 			break;
 		}
@@ -86,6 +91,7 @@ public class GameControllerScript : MonoBehaviour {
 	//Derection decide function
 	private void directionDecide(){
 		if (Input.anyKeyDown){
+			audio.PlayOneShot(parameterSE);
 			bird.SendMessage("birdDirection");
 			StatusManeger.gameState = StatusManeger.GameStatus.ANGLE;
 		}
@@ -97,6 +103,7 @@ public class GameControllerScript : MonoBehaviour {
 	//TODO
 	private void angleDecide(){
 		if (Input.anyKeyDown){
+			audio.PlayOneShot(parameterSE);
 			StatusManeger.gameState = StatusManeger.GameStatus.POWER;
 		}
 	}
@@ -108,6 +115,7 @@ public class GameControllerScript : MonoBehaviour {
 	private void powerDecide(){
 
 		if (Input.anyKeyDown){
+			audio.PlayOneShot(parameterSE);
 			bird.SendMessage("birdGetPow");
 			StatusManeger.gameState = StatusManeger.GameStatus.FLY;
 		}
@@ -134,7 +142,7 @@ public class GameControllerScript : MonoBehaviour {
 	//Game finish function
 	//TODO
 	private void gameFinish(){
-		Application.LoadLevel("TestSence");
+		StatusManeger.gameState = StatusManeger.GameStatus.RESULT;
 	}
 
 

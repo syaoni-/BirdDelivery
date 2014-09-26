@@ -11,6 +11,8 @@ public class BirdScript : MonoBehaviour {
 
 	private Animator anim;
 
+	private AudioClip jumpSE;
+
 	// Use this for initialization
 	void Start () {
 		earthPos = GameObject.FindWithTag("Earth").transform.position;

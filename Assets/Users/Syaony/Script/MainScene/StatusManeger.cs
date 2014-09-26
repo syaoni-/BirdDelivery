@@ -25,7 +25,8 @@ public class StatusManeger : SingletonMonoBehaviour<StatusManeger> {
 		FLY,
 		FLYING,
 		LANDING,
-		FINISH
+		FINISH,
+		RESULT
 	}
 
 	public static GameStatus gameState;
