@@ -44,14 +44,22 @@ public class GUIManeger : MonoBehaviour {
 		GUI.Label(new Rect(10,50,100,100), "Distance : "+PlayerStatusManeger.playerDistanceToGoal);
 		GUI.Label(new Rect(400,10,100,100), "Target : "+PlayerStatusManeger.targetName);
 #endif
-		GUI.skin = textSkin;
-		GUI.Label(new Rect(screenWidth*3,screenHeight/3*2, screenWidth*3, screenHeight*2), ""+PlayerStatusManeger.targetName+" : ");
-		GUI.skin = numberSkin;
-		GUI.Label(new Rect(screenWidth*6,screenHeight, screenWidth*3, screenHeight), ""+PlayerStatusManeger.playerDistanceToGoal+"km");
+		/*if (StatusManeger.gameState != StatusManeger.GameStatus.START){
+			GUI.skin = textSkin;
+			GUI.Label(new Rect(screenWidth*3,screenHeight/3*2, screenWidth*3, screenHeight*2), ""+PlayerStatusManeger.targetName+" : ");
+			GUI.skin = numberSkin;
+			GUI.Label(new Rect(screenWidth*6,screenHeight, screenWidth*3, screenHeight), ""+PlayerStatusManeger.playerDistanceToGoal+"km");
+		}*/
 
 		switch (StatusManeger.gameState) {
 
+		case StatusManeger.GameStatus.DIRECTION:
+			distanceGUI();
+			break;
+
 		case StatusManeger.GameStatus.ANGLE:
+			distanceGUI();
+
 			float angleX = screenWidth*3;
 			float angleY = screenHeight*2;
 			float angleW = screenWidth*2;
@@ -66,11 +74,17 @@ public class GUIManeger : MonoBehaviour {
 			break;
 
 		case StatusManeger.GameStatus.POWER:
+			distanceGUI();
 			GUI.DrawTexture(new Rect(screenWidth, screenHeight*3, screenWidth, screenHeight*5), powerGauge);
 			GUI.DrawTexture(new Rect(screenWidth, screenHeight*3, screenWidth, screenHeight*5*(1 - Mathf.Abs(Mathf.Sin(PlayerStatusManeger.playerJumpPow)))),powerGaugeBack);
 			break;
 
+		case StatusManeger.GameStatus.FLYING:
+			distanceGUI();
+			break;
+
 		case StatusManeger.GameStatus.RESULT:
+			distanceGUI();
 			GUI.DrawTexture(new Rect(screenWidth, screenHeight, screenWidth*8, screenHeight*8), resultBack);
 			GUI.DrawTexture(new Rect(screenWidth, screenHeight, screenWidth*8, screenHeight*8), resultCharacters[resultCharacter]);
 			//GUI.DrawTexture(new Rect(screenWidth*2, screenHeight*8, screenWidth*3, screenHeight*2), retryTexture);
@@ -95,6 +109,13 @@ public class GUIManeger : MonoBehaviour {
 		default:
 			break;
 		}
+	}
+
+	void distanceGUI(){
+		GUI.skin = textSkin;
+		GUI.Label(new Rect(screenWidth*3,screenHeight/3*2, screenWidth*3, screenHeight*2), ""+PlayerStatusManeger.targetName+" : ");
+		GUI.skin = numberSkin;
+		GUI.Label(new Rect(screenWidth*6,screenHeight, screenWidth*3, screenHeight), ""+PlayerStatusManeger.playerDistanceToGoal+"km");
 	}
 
 }
