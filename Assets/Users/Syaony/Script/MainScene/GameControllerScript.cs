@@ -17,13 +17,10 @@ public class GameControllerScript : SingletonMonoBehaviour<GameControllerScript>
 	}
 
 
-	GameObject bird;
-
 	public AudioClip parameterSE;
 
 	// Use this for initialization
 	void Start () {
-		bird = GameObject.FindWithTag("Player");
 	}
 	
 	// Update is called once per frame
@@ -105,9 +102,7 @@ public class GameControllerScript : SingletonMonoBehaviour<GameControllerScript>
 			audio.PlayOneShot(parameterSE);
 			//bird.SendMessage("birdDirection");
 			GameObject.FindWithTag("Player").SendMessage("birdDirection");
-			Debug.Log ("test");
 			StatusManeger.gameState = StatusManeger.GameStatus.ANGLE;
-			Debug.Log(StatusManeger.gameState);
 		}
 	}
 
@@ -118,7 +113,6 @@ public class GameControllerScript : SingletonMonoBehaviour<GameControllerScript>
 	private void angleDecide(){
 		if (Input.anyKeyDown){
 			audio.PlayOneShot(parameterSE);
-			Debug.Log("fffff");
 			StatusManeger.gameState = StatusManeger.GameStatus.POWER;
 		}
 	}
