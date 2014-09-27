@@ -14,10 +14,13 @@ public class GUIManeger : MonoBehaviour {
 	public Texture powerGaugeBack;
 	public Texture resultBack;
 	public Texture[] resultCharacters = new Texture[5];
+	public Texture naviCharacter;
+	public Texture commentTexture;
 	private int resultCharacter;
 
 	public GUISkin numberSkin;
 	public GUISkin textSkin;
+	public GUISkin talkSkin;
 	public GUISkin retrySkin;
 	public GUISkin topSkin;
 
@@ -53,12 +56,19 @@ public class GUIManeger : MonoBehaviour {
 
 		switch (StatusManeger.gameState) {
 
+		case StatusManeger.GameStatus.TARGETSCENE:
+			navigation("今回は"+PlayerStatusManeger.targetName+"まで行ってくれ！");
+			break;
+
+
 		case StatusManeger.GameStatus.DIRECTION:
 			distanceGUI();
+			navigation("ジャンプする方向を選んで！");
 			break;
 
 		case StatusManeger.GameStatus.ANGLE:
 			distanceGUI();
+			navigation("次にジャンプする角度を決めてね");
 
 			float angleX = screenWidth*3;
 			float angleY = screenHeight*2;
@@ -75,8 +85,13 @@ public class GUIManeger : MonoBehaviour {
 
 		case StatusManeger.GameStatus.POWER:
 			distanceGUI();
-			GUI.DrawTexture(new Rect(screenWidth, screenHeight*3, screenWidth, screenHeight*5), powerGauge);
-			GUI.DrawTexture(new Rect(screenWidth, screenHeight*3, screenWidth, screenHeight*5*(1 - Mathf.Abs(Mathf.Sin(PlayerStatusManeger.playerJumpPow)))),powerGaugeBack);
+			navigation("どのくらいの強さでジャンプする？");
+			GUI.DrawTexture(new Rect(screenWidth, screenHeight*2, screenWidth, screenHeight*5), powerGauge);
+			GUI.DrawTexture(new Rect(screenWidth, screenHeight*2, screenWidth, screenHeight*5*(1 - Mathf.Abs(Mathf.Sin(PlayerStatusManeger.playerJumpPow)))),powerGaugeBack);
+			break;
+
+		case StatusManeger.GameStatus.FLY:
+			navigation("それじゃあいってらっしゃい！");
 			break;
 
 		case StatusManeger.GameStatus.FLYING:
@@ -87,10 +102,8 @@ public class GUIManeger : MonoBehaviour {
 			distanceGUI();
 			GUI.DrawTexture(new Rect(screenWidth, screenHeight, screenWidth*8, screenHeight*8), resultBack);
 			GUI.DrawTexture(new Rect(screenWidth, screenHeight, screenWidth*8, screenHeight*8), resultCharacters[resultCharacter]);
-			//GUI.DrawTexture(new Rect(screenWidth*2, screenHeight*8, screenWidth*3, screenHeight*2), retryTexture);
-			//GUI.DrawTexture(new Rect(screenWidth*6, screenHeight*8, screenWidth*3, screenHeight*2), retryTexture);
-			GUI.skin = textSkin;
-			GUI.Label(new Rect(screenWidth*3,screenHeight*4, screenWidth*3, screenHeight*2), "Score");
+			GUI.skin = talkSkin;
+			GUI.Label(new Rect(screenWidth*2,screenHeight*3.5f, screenWidth*4, screenHeight*2), "目標まであと");
 			GUI.skin = numberSkin;
 			GUI.Label(new Rect(screenWidth*3,screenHeight*5, screenWidth*3, screenHeight*2), ""+PlayerStatusManeger.playerDistanceToGoal+"km");
 
@@ -118,6 +131,13 @@ public class GUIManeger : MonoBehaviour {
 		GUI.Label(new Rect(screenWidth*3,screenHeight/3*2, screenWidth*3, screenHeight*2), ""+PlayerStatusManeger.targetName+" : ");
 		GUI.skin = numberSkin;
 		GUI.Label(new Rect(screenWidth*6,screenHeight, screenWidth*3, screenHeight), ""+PlayerStatusManeger.playerDistanceToGoal+"km");
+	}
+
+	void navigation(string word){
+		GUI.DrawTexture(new Rect(0, screenHeight*6, screenWidth*2, screenHeight*4), naviCharacter);
+		GUI.DrawTexture(new Rect(screenWidth*2, screenHeight*7, screenWidth*5, screenHeight*3), commentTexture);
+		GUI.skin = talkSkin;
+		GUI.Label(new Rect(screenWidth*3,screenHeight*8,screenWidth*3, screenHeight*2), word);
 	}
 
 	void reload(){

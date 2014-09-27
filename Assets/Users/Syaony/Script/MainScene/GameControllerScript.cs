@@ -74,6 +74,9 @@ public class GameControllerScript : SingletonMonoBehaviour<GameControllerScript>
 	//Game start function
 	//TODO
 	private void gameStartTalk(){
+		Invoke("stateToTergetScene",2);
+	}
+	void stateToTergetScene(){
 		StatusManeger.gameState = StatusManeger.GameStatus.TARGETSCENE;
 	}
 

@@ -4,7 +4,7 @@ using System.Collections;
 public class BirdScript : MonoBehaviour {
 
 	private Vector3 earthPos;
-	private float gravity = 0.1f;
+	private float gravity = 0.05f;
 
 	private float MaxPow = 100;
 	private Vector3 jumpDirection;

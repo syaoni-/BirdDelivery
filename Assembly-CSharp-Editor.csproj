@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+	<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+	<ProductVersion>10.0.20506</ProductVersion>
+	<SchemaVersion>2.0</SchemaVersion>
+	<ProjectGuid>{D553B680-682F-8D76-C74F-C0CA76A27B66}</ProjectGuid>
+	<OutputType>Library</OutputType>
+	<AppDesignerFolder>Properties</AppDesignerFolder>
+	<RootNamespace></RootNamespace>
+	<AssemblyName>Assembly-CSharp-Editor</AssemblyName>
+	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+	<FileAlignment>512</FileAlignment>
+	<BaseDirectory>Assets</BaseDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+	<DebugSymbols>true</DebugSymbols>
+	<DebugType>full</DebugType>
+	<Optimize>false</Optimize>
+	<OutputPath>Temp\bin\Debug\</OutputPath>
+	<DefineConstants>DEBUG;TRACE;UNITY_4_5_2;UNITY_4_5;UNITY_STANDALONE_OSX;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;UNITY_STANDALONE;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_GAMECENTER;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_OSX;UNITY_TEAM_LICENSE;UNITY_PRO_LICENSE</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+	<DebugType>pdbonly</DebugType>
+	<Optimize>true</Optimize>
+	<OutputPath>Temp\bin\Release\</OutputPath>
+	<DefineConstants>TRACE</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+	<Reference Include="System" />
+    <Reference Include="System.XML" />
+	<Reference Include="System.Core" />
+	<Reference Include="System.Xml.Linq" />
+	<Reference Include="UnityEngine">
+	  <HintPath>/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEngine.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEditor">
+	  <HintPath>/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEditor.dll</HintPath>
+	</Reference>
+  </ItemGroup>
+  <ItemGroup>
+     <Compile Include="Assets\Utage\Editor\Scripts\Attribute\EnumFlagsAttributeDrawer.cs" />
+     <Compile Include="Assets\Utage\Editor\Scripts\CustomCreateAsset.cs" />
+     <Compile Include="Assets\Utage\Editor\Scripts\EdtiorToolKit.cs" />
+     <Compile Include="Assets\Utage\Editor\Scripts\ExcelParser.cs" />
+     <Compile Include="Assets\Utage\Editor\Scripts\Inspector\AdvEngineStarterInspector.cs" />
+     <Compile Include="Assets\Utage\Editor\Scripts\Inspector\CameraManagerInspector.cs" />
+     <Compile Include="Assets\Utage\Editor\Scripts\Inspector\Node2DInspector.cs" />
+     <Compile Include="Assets\Utage\Editor\Scripts\Inspector\Node2DSortDataInspector.cs" />
+     <Compile Include="Assets\Utage\Editor\Scripts\Inspector\Sprite2DInspector.cs" />
+     <Compile Include="Assets\Utage\Editor\Scripts\Inspector\TextArea2DInspector.cs" />
+     <Compile Include="Assets\Utage\Editor\Scripts\Menu\CreateAdvEngineWindow.cs" />
+     <Compile Include="Assets\Utage\Editor\Scripts\Menu\CreateManageresWindow.cs" />
+     <Compile Include="Assets\Utage\Editor\Scripts\Menu\CreateNewProjectWindow.cs" />
+     <Compile Include="Assets\Utage\Editor\Scripts\Menu\MeuToolCreate.cs" />
+     <Compile Include="Assets\Utage\Editor\Scripts\Menu\MeuToolOpen.cs" />
+     <Compile Include="Assets\Utage\Editor\Scripts\Menu\MeuToolOutputFile.cs" />
+     <Compile Include="Assets\Utage\Editor\Scripts\Menu\ScenarioData\AdvExcelCsvConverter.cs" />
+     <Compile Include="Assets\Utage\Editor\Scripts\Menu\ScenarioData\AdvExcelImporter.cs" />
+     <Compile Include="Assets\Utage\Editor\Scripts\Menu\ScenarioData\AdvScenarioDataBuilderWindow.cs" />
+     <Compile Include="Assets\Utage\Editor\Scripts\Menu\ScenarioData\AdvScenarioDataProject.cs" />
+     <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_eye.shader" />
+     <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_fuku.shader" />
+     <None Include="Assets\Utage\LocalizeText\SystemText.txt" />
+     <None Include="Assets\Utage\Editor\npoi2.0.1\Read Me.txt" />
+     <None Include="Assets\UnityChan\Voice\unity-chan_voice_list.txt" />
+     <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />
+     <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_fuku_ds.shader" />
+     <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_eye_blend.shader" />
+     <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_hair_ds.shader" />
+     <None Include="Assets\Utage\Examples\ScriptableObject\ExampleText.txt" />
+     <None Include="Assets\SU3DJPFont\list.txt" />
+     <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_akarami_blend.shader" />
+     <None Include="Assets\Utage\Editor\npoi2.0.1\License.txt" />
+     <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_hair.shader" />
+     <None Include="Assets\SU3DJPFont\readme_jp.txt" />
+     <None Include="Assets\UnityChan\Stage\Shader\AlphaMask.shader" />
+     <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_eyelash_blend.shader" />
+     <None Include="Assets\SU3DJPFont\license.txt" />
+     <None Include="Assets\Utage\Scripts\GameLib\iTween\Plugins\ReadMe!\ReadMe!.txt" />
+     <None Include="Assets\SU3DJPFont\readme.txt" />
+     <None Include="Assets\Utage\ReadMe.txt" />
+     <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_hada.shader" />
+     <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_hada_blend.shader" />
+     <None Include="Assets\Utage\Editor\npoi2.0.1\Release Notes.txt" />
+     <None Include="Assets\SU3DJPFont\license_jp.txt" />
+     <None Include="Assets\Utage\LocalizeText\ErrorMsg.txt" />
+     <None Include="Assets\Utage\LocalizeText\AdvErrorMsg.txt" />
+ <Reference Include="UnityEditor.Graphs">
+ <HintPath>/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEditor.Graphs.dll</HintPath>
+ </Reference>
+ <Reference Include="NPOI.OpenXml4Net">
+ <HintPath>/Users/e125752/Unity_Project/BirdDelivery/Assets/Utage/Editor/npoi2.0.1/dotnet3.5/NPOI.OpenXml4Net.dll</HintPath>
+ </Reference>
+ <Reference Include="NPOI.OOXML">
+ <HintPath>/Users/e125752/Unity_Project/BirdDelivery/Assets/Utage/Editor/npoi2.0.1/dotnet3.5/NPOI.OOXML.dll</HintPath>
+ </Reference>
+ <Reference Include="NPOI">
+ <HintPath>/Users/e125752/Unity_Project/BirdDelivery/Assets/Utage/Editor/npoi2.0.1/dotnet3.5/NPOI.dll</HintPath>
+ </Reference>
+ <Reference Include="UtageFree">
+ <HintPath>/Users/e125752/Unity_Project/BirdDelivery/Assets/Utage/UtageFree.dll</HintPath>
+ </Reference>
+ <Reference Include="NPOI.OpenXmlFormats">
+ <HintPath>/Users/e125752/Unity_Project/BirdDelivery/Assets/Utage/Editor/npoi2.0.1/dotnet3.5/NPOI.OpenXmlFormats.dll</HintPath>
+ </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp.csproj">
+      <Project>{8229BB06-8EAA-E59B-260A-AC262E528DF7}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
+    <ProjectReference Include="Assembly-UnityScript.unityproj">
+      <Project>{34EA10D5-1834-EB3E-11D4-BB70E1E166B5}</Project>      <Name>Assembly-UnityScript</Name>    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+	   Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  
+</Project>
