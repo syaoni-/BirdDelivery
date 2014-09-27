@@ -96,13 +96,15 @@ public class GUIManeger : MonoBehaviour {
 
 			GUI.skin = retrySkin;
 			if (GUI.Button(new Rect(screenWidth, screenHeight*8, screenWidth*3, screenHeight*2),"")) {
-				Application.LoadLevel("Main");
+				StatusManeger.gameState = StatusManeger.GameStatus.STARTTALK;
+				PlayerStatusManeger.playerStatusInit();
+				Invoke("reload",1);
 			}
 
 			GUI.skin = topSkin;
 			if (GUI.Button(new Rect(screenWidth*6, screenHeight*8, screenWidth*3, screenHeight*2), "")) {
-				StatusManeger.gameState = StatusManeger.GameStatus.START;
-				Application.LoadLevel("title");
+				StatusManeger.gameState = StatusManeger.GameStatus.STARTTALK;
+				Invoke ("loadTitle",1);
 			}
 			break;
 
@@ -116,6 +118,14 @@ public class GUIManeger : MonoBehaviour {
 		GUI.Label(new Rect(screenWidth*3,screenHeight/3*2, screenWidth*3, screenHeight*2), ""+PlayerStatusManeger.targetName+" : ");
 		GUI.skin = numberSkin;
 		GUI.Label(new Rect(screenWidth*6,screenHeight, screenWidth*3, screenHeight), ""+PlayerStatusManeger.playerDistanceToGoal+"km");
+	}
+
+	void reload(){
+		Application.LoadLevel("Main");
+	}
+
+	void loadTitle(){
+		Application.LoadLevel("title");
 	}
 
 }

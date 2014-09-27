@@ -58,4 +58,13 @@ public class PlayerStatusManeger : SingletonMonoBehaviour<PlayerStatusManeger> {
 			break;
 		}
 	}
+
+
+	public static void playerStatusInit(){
+		playerDirection = 0;
+		playerAngle = 0;
+		playerJumpPow = 0;
+		playerDistanceToGoal = 0;
+		targetName = null;
+	}
 }

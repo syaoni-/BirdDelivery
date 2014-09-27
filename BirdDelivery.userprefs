@@ -1,18 +1,19 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Users/Syaony/Script/MainScene/StatusManeger.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Users/Syaony/Script/MainScene/GUIManeger.cs">
     <Files>
-      <File FileName="Assets/Users/Syaony/Script/MainScene/FadeManeger.cs" Line="4" Column="65" />
-      <File FileName="Assets/Users/Syaony/Script/MainScene/BirdScript.cs" Line="58" Column="2" />
+      <File FileName="Assets/Users/Syaony/Script/MainScene/FadeManeger.cs" Line="1" Column="1" />
+      <File FileName="Assets/Users/Syaony/Script/MainScene/BirdScript.cs" Line="14" Column="27" />
       <File FileName="Assets/Users/Syaony/Script/MainScene/PlayerStatusManeger.cs" Line="1" Column="1" />
-      <File FileName="Assets/Users/Syaony/Script/MainScene/EarthController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Users/Syaony/Script/MainScene/EarthController.cs" Line="45" Column="62" />
       <File FileName="Assets/Users/Syaony/Script/MainScene/TargetList.cs" Line="29" Column="51" />
-      <File FileName="Assets/Users/Syaony/Script/MainScene/GameControllerScript.cs" Line="1" Column="1" />
-      <File FileName="Assets/Users/Syaony/Script/MainScene/GUIManeger.cs" Line="68" Column="4" />
-      <File FileName="Assets/Users/Syaony/Script/MainScene/CameraScript.cs" Line="11" Column="30" />
-      <File FileName="Assets/Users/Syaony/Script/MainScene/StartScene.cs" Line="11" Column="2" />
-      <File FileName="Assets/Users/Syaony/Script/MainScene/SingletonMonoBehaviour.cs" Line="13" Column="48" />
-      <File FileName="Assets/Users/Syaony/Script/MainScene/StatusManeger.cs" Line="1" Column="1" />
+      <File FileName="Assets/Users/Syaony/Script/MainScene/GameControllerScript.cs" Line="95" Column="1" />
+      <File FileName="Assets/Users/Syaony/Script/MainScene/GUIManeger.cs" Line="104" Column="62" />
+      <File FileName="Assets/Users/Syaony/Script/MainScene/CameraScript.cs" Line="1" Column="1" />
+      <File FileName="Assets/Users/Syaony/Script/MainScene/StartScene.cs" Line="1" Column="1" />
+      <File FileName="Assets/Users/Syaony/Script/MainScene/SingletonMonoBehaviour.cs" Line="1" Column="1" />
+      <File FileName="Assets/Users/Syaony/Script/MainScene/StatusManeger.cs" Line="31" Column="2" />
+      <File FileName="Assets/Users/Syaony/Script/MainScene/DirectionArrow.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

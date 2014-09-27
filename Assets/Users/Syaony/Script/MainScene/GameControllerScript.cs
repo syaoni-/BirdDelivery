@@ -3,7 +3,18 @@ using System.Collections;
 
 //status : TODO
 
-public class GameControllerScript : MonoBehaviour {
+public class GameControllerScript : SingletonMonoBehaviour<GameControllerScript> {
+
+	public void Awake()
+	{
+		if(this != Instance)
+		{
+			Destroy(this);
+			return;
+		}
+		
+		DontDestroyOnLoad(this.gameObject);
+	}
 
 
 	GameObject bird;
@@ -92,8 +103,11 @@ public class GameControllerScript : MonoBehaviour {
 	private void directionDecide(){
 		if (Input.anyKeyDown){
 			audio.PlayOneShot(parameterSE);
-			bird.SendMessage("birdDirection");
+			//bird.SendMessage("birdDirection");
+			GameObject.FindWithTag("Player").SendMessage("birdDirection");
+			Debug.Log ("test");
 			StatusManeger.gameState = StatusManeger.GameStatus.ANGLE;
+			Debug.Log(StatusManeger.gameState);
 		}
 	}
 
@@ -104,6 +118,7 @@ public class GameControllerScript : MonoBehaviour {
 	private void angleDecide(){
 		if (Input.anyKeyDown){
 			audio.PlayOneShot(parameterSE);
+			Debug.Log("fffff");
 			StatusManeger.gameState = StatusManeger.GameStatus.POWER;
 		}
 	}
@@ -116,7 +131,8 @@ public class GameControllerScript : MonoBehaviour {
 
 		if (Input.anyKeyDown){
 			audio.PlayOneShot(parameterSE);
-			bird.SendMessage("birdGetPow");
+			//bird.SendMessage("birdGetPow");
+			GameObject.FindWithTag("Player").SendMessage("birdGetPow");
 			StatusManeger.gameState = StatusManeger.GameStatus.FLY;
 		}
 	}
